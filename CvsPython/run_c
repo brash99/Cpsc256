@@ -1,0 +1,3 @@
+#!/bin/sh
+gcc -O3  -std=c99 -o c_loop c_loop.c
+time ./c_loop 840000000
