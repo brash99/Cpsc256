@@ -1138,10 +1138,10 @@ static void __Pyx_AddTraceback(const char *funcname, int c_line,
 static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *);
 
 /* CIntToPy.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value);
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
 
 /* CIntToPy.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value);
 
 /* CIntFromPy.proto */
 static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *);
@@ -1175,50 +1175,50 @@ int __pyx_module_is_main_cython_loop = 0;
 static PyObject *__pyx_builtin_range;
 static const char __pyx_k_i[] = "i";
 static const char __pyx_k_s[] = "s";
-static const char __pyx_k_loop[] = "loop";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_range[] = "range";
+static const char __pyx_k_NUMBER[] = "NUMBER";
 static const char __pyx_k_run_loop[] = "run_loop";
 static const char __pyx_k_cython_loop[] = "cython_loop";
 static const char __pyx_k_cython_loop_pyx[] = "cython_loop.pyx";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
+static PyObject *__pyx_n_s_NUMBER;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_cython_loop;
 static PyObject *__pyx_kp_s_cython_loop_pyx;
 static PyObject *__pyx_n_s_i;
-static PyObject *__pyx_n_s_loop;
 static PyObject *__pyx_n_s_main;
 static PyObject *__pyx_n_s_name;
 static PyObject *__pyx_n_s_range;
 static PyObject *__pyx_n_s_run_loop;
 static PyObject *__pyx_n_s_s;
 static PyObject *__pyx_n_s_test;
-static PyObject *__pyx_pf_11cython_loop_run_loop(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_loop); /* proto */
+static PyObject *__pyx_pf_11cython_loop_run_loop(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_NUMBER); /* proto */
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_codeobj__2;
 /* Late includes */
 
 /* "cython_loop.pyx":1
- * def run_loop(int loop):             # <<<<<<<<<<<<<<
- * 	cdef int i,s
+ * def run_loop(int NUMBER):             # <<<<<<<<<<<<<<
+ * 	cdef int i,s #note the use of cdef!!
  * 	s = 0
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_11cython_loop_1run_loop(PyObject *__pyx_self, PyObject *__pyx_arg_loop); /*proto*/
+static PyObject *__pyx_pw_11cython_loop_1run_loop(PyObject *__pyx_self, PyObject *__pyx_arg_NUMBER); /*proto*/
 static PyMethodDef __pyx_mdef_11cython_loop_1run_loop = {"run_loop", (PyCFunction)__pyx_pw_11cython_loop_1run_loop, METH_O, 0};
-static PyObject *__pyx_pw_11cython_loop_1run_loop(PyObject *__pyx_self, PyObject *__pyx_arg_loop) {
-  int __pyx_v_loop;
+static PyObject *__pyx_pw_11cython_loop_1run_loop(PyObject *__pyx_self, PyObject *__pyx_arg_NUMBER) {
+  int __pyx_v_NUMBER;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("run_loop (wrapper)", 0);
-  assert(__pyx_arg_loop); {
-    __pyx_v_loop = __Pyx_PyInt_As_int(__pyx_arg_loop); if (unlikely((__pyx_v_loop == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1, __pyx_L3_error)
+  assert(__pyx_arg_NUMBER); {
+    __pyx_v_NUMBER = __Pyx_PyInt_As_int(__pyx_arg_NUMBER); if (unlikely((__pyx_v_NUMBER == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -1226,20 +1226,20 @@ static PyObject *__pyx_pw_11cython_loop_1run_loop(PyObject *__pyx_self, PyObject
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_11cython_loop_run_loop(__pyx_self, ((int)__pyx_v_loop));
+  __pyx_r = __pyx_pf_11cython_loop_run_loop(__pyx_self, ((int)__pyx_v_NUMBER));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_11cython_loop_run_loop(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_loop) {
+static PyObject *__pyx_pf_11cython_loop_run_loop(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_NUMBER) {
   CYTHON_UNUSED int __pyx_v_i;
   int __pyx_v_s;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  int __pyx_t_1;
-  int __pyx_t_2;
+  long __pyx_t_1;
+  long __pyx_t_2;
   int __pyx_t_3;
   PyObject *__pyx_t_4 = NULL;
   int __pyx_lineno = 0;
@@ -1248,29 +1248,29 @@ static PyObject *__pyx_pf_11cython_loop_run_loop(CYTHON_UNUSED PyObject *__pyx_s
   __Pyx_RefNannySetupContext("run_loop", 0);
 
   /* "cython_loop.pyx":3
- * def run_loop(int loop):
- * 	cdef int i,s
+ * def run_loop(int NUMBER):
+ * 	cdef int i,s #note the use of cdef!!
  * 	s = 0             # <<<<<<<<<<<<<<
- * 	for i in range(loop):
+ * 	for i in range(NUMBER*1000000):
  * 		s+=1
  */
   __pyx_v_s = 0;
 
   /* "cython_loop.pyx":4
- * 	cdef int i,s
+ * 	cdef int i,s #note the use of cdef!!
  * 	s = 0
- * 	for i in range(loop):             # <<<<<<<<<<<<<<
+ * 	for i in range(NUMBER*1000000):             # <<<<<<<<<<<<<<
  * 		s+=1
  * 	return s
  */
-  __pyx_t_1 = __pyx_v_loop;
+  __pyx_t_1 = (__pyx_v_NUMBER * 0xF4240);
   __pyx_t_2 = __pyx_t_1;
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_i = __pyx_t_3;
 
     /* "cython_loop.pyx":5
  * 	s = 0
- * 	for i in range(loop):
+ * 	for i in range(NUMBER*1000000):
  * 		s+=1             # <<<<<<<<<<<<<<
  * 	return s
  */
@@ -1278,7 +1278,7 @@ static PyObject *__pyx_pf_11cython_loop_run_loop(CYTHON_UNUSED PyObject *__pyx_s
   }
 
   /* "cython_loop.pyx":6
- * 	for i in range(loop):
+ * 	for i in range(NUMBER*1000000):
  * 		s+=1
  * 	return s             # <<<<<<<<<<<<<<
  */
@@ -1290,8 +1290,8 @@ static PyObject *__pyx_pf_11cython_loop_run_loop(CYTHON_UNUSED PyObject *__pyx_s
   goto __pyx_L0;
 
   /* "cython_loop.pyx":1
- * def run_loop(int loop):             # <<<<<<<<<<<<<<
- * 	cdef int i,s
+ * def run_loop(int NUMBER):             # <<<<<<<<<<<<<<
+ * 	cdef int i,s #note the use of cdef!!
  * 	s = 0
  */
 
@@ -1352,11 +1352,11 @@ static struct PyModuleDef __pyx_moduledef = {
 #endif
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
+  {&__pyx_n_s_NUMBER, __pyx_k_NUMBER, sizeof(__pyx_k_NUMBER), 0, 0, 1, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_n_s_cython_loop, __pyx_k_cython_loop, sizeof(__pyx_k_cython_loop), 0, 0, 1, 1},
   {&__pyx_kp_s_cython_loop_pyx, __pyx_k_cython_loop_pyx, sizeof(__pyx_k_cython_loop_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_i, __pyx_k_i, sizeof(__pyx_k_i), 0, 0, 1, 1},
-  {&__pyx_n_s_loop, __pyx_k_loop, sizeof(__pyx_k_loop), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
   {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
   {&__pyx_n_s_range, __pyx_k_range, sizeof(__pyx_k_range), 0, 0, 1, 1},
@@ -1377,11 +1377,11 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
   /* "cython_loop.pyx":1
- * def run_loop(int loop):             # <<<<<<<<<<<<<<
- * 	cdef int i,s
+ * def run_loop(int NUMBER):             # <<<<<<<<<<<<<<
+ * 	cdef int i,s #note the use of cdef!!
  * 	s = 0
  */
-  __pyx_tuple_ = PyTuple_Pack(4, __pyx_n_s_loop, __pyx_n_s_loop, __pyx_n_s_i, __pyx_n_s_s); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(4, __pyx_n_s_NUMBER, __pyx_n_s_NUMBER, __pyx_n_s_i, __pyx_n_s_s); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
   __pyx_codeobj__2 = (PyObject*)__Pyx_PyCode_New(1, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple_, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cython_loop_pyx, __pyx_n_s_run_loop, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -1664,8 +1664,8 @@ if (!__Pyx_RefNanny) {
   #endif
 
   /* "cython_loop.pyx":1
- * def run_loop(int loop):             # <<<<<<<<<<<<<<
- * 	cdef int i,s
+ * def run_loop(int NUMBER):             # <<<<<<<<<<<<<<
+ * 	cdef int i,s #note the use of cdef!!
  * 	s = 0
  */
   __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_11cython_loop_1run_loop, NULL, __pyx_n_s_cython_loop); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -2245,44 +2245,6 @@ raise_neg_overflow:
 }
 
 /* CIntToPy */
-static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value) {
-#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wconversion"
-#endif
-    const int neg_one = (int) -1, const_zero = (int) 0;
-#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
-#pragma GCC diagnostic pop
-#endif
-    const int is_unsigned = neg_one > const_zero;
-    if (is_unsigned) {
-        if (sizeof(int) < sizeof(long)) {
-            return PyInt_FromLong((long) value);
-        } else if (sizeof(int) <= sizeof(unsigned long)) {
-            return PyLong_FromUnsignedLong((unsigned long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(int) <= sizeof(unsigned PY_LONG_LONG)) {
-            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
-#endif
-        }
-    } else {
-        if (sizeof(int) <= sizeof(long)) {
-            return PyInt_FromLong((long) value);
-#ifdef HAVE_LONG_LONG
-        } else if (sizeof(int) <= sizeof(PY_LONG_LONG)) {
-            return PyLong_FromLongLong((PY_LONG_LONG) value);
-#endif
-        }
-    }
-    {
-        int one = 1; int little = (int)*(unsigned char *)&one;
-        unsigned char *bytes = (unsigned char *)&value;
-        return _PyLong_FromByteArray(bytes, sizeof(int),
-                                     little, !is_unsigned);
-    }
-}
-
-/* CIntToPy */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
 #ifdef __Pyx_HAS_GCC_DIAGNOSTIC
 #pragma GCC diagnostic push
@@ -2316,6 +2278,44 @@ static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
         int one = 1; int little = (int)*(unsigned char *)&one;
         unsigned char *bytes = (unsigned char *)&value;
         return _PyLong_FromByteArray(bytes, sizeof(long),
+                                     little, !is_unsigned);
+    }
+}
+
+/* CIntToPy */
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_int(int value) {
+#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+    const int neg_one = (int) -1, const_zero = (int) 0;
+#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
+#pragma GCC diagnostic pop
+#endif
+    const int is_unsigned = neg_one > const_zero;
+    if (is_unsigned) {
+        if (sizeof(int) < sizeof(long)) {
+            return PyInt_FromLong((long) value);
+        } else if (sizeof(int) <= sizeof(unsigned long)) {
+            return PyLong_FromUnsignedLong((unsigned long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(int) <= sizeof(unsigned PY_LONG_LONG)) {
+            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+#endif
+        }
+    } else {
+        if (sizeof(int) <= sizeof(long)) {
+            return PyInt_FromLong((long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(int) <= sizeof(PY_LONG_LONG)) {
+            return PyLong_FromLongLong((PY_LONG_LONG) value);
+#endif
+        }
+    }
+    {
+        int one = 1; int little = (int)*(unsigned char *)&one;
+        unsigned char *bytes = (unsigned char *)&value;
+        return _PyLong_FromByteArray(bytes, sizeof(int),
                                      little, !is_unsigned);
     }
 }
