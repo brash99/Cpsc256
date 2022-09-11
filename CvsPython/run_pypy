@@ -1,2 +1,2 @@
 #!/bin/sh
-time pypy python_loop_pypy.py 840000000
+time pypy python_loop_pypy.py 840
