@@ -1,0 +1,3 @@
+#!/bin/sh
+python3 setup_cpython.py build_ext --inplace
+time python3 cython_call.py 840

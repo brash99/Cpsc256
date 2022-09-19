@@ -1,0 +1,47 @@
+# Makefile Template for multiple executables
+#
+# Author:  E.J. Brash
+# Date:  March 25, 2014
+#
+# Specify compiler, compiler flags, and linker flags
+CC=g++
+CFLAGS=-c -Wall
+LDFLAGS=
+#
+# Source files
+FACSOURCE=factorial.cpp
+SOURCES1=main.cpp hello.cpp
+SOURCES2=states.cpp
+#
+# Object files
+FACOBJS=$(FACSOURCE:.cpp=.o)
+OBJECTS1=$(SOURCES1:.cpp=.o)
+OBJECTS2=$(SOURCES2:.cpp=.o)
+#
+# Executables
+EXECUTABLE1=hello
+EXECUTABLE2=states
+
+all: $(SOURCES) $(EXECUTABLE1) $(EXECUTABLE2)
+	
+$(EXECUTABLE1): $(FACOBJS) $(OBJECTS1)
+	$(CC) $(LDFLAGS) $(OBJECTS1) $(FACOBJS) -o $@
+
+$(EXECUTABLE2): $(FACOBJS) $(OBJECTS2)
+	$(CC) $(LDFLAGS) $(OBJECTS2) $(FACOBJS) -o $@
+
+.cpp.o:
+	$(CC) $(CFLAGS) $< -o $@
+
+# 
+# Dependencies
+$(OBJECTS1) : functions.h
+
+$(OBJECTS2) : functions.h
+
+$(FACOBJS) : functions.h
+
+# 
+# Rule to clean things up
+clean:
+	rm -rf $(OBJECTS1) $(OBJECTS2) $(FACOBJS) $(EXECUTABLE1) $(EXECUTABLE2)

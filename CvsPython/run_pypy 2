@@ -1,0 +1,2 @@
+#!/bin/sh
+time pypy python_loop_pypy.py 840
