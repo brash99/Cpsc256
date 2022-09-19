@@ -1,5 +1,5 @@
 all:
-	g++ -c main.cpp 
-	g++ -c hello.cpp
-	g++ -c factorial.cpp
-	g++ -o hello main.o hello.o factorial.o 
+	gcc -c main.c 
+	gcc -c hello.c
+	gcc -c factorial.c
+	gcc -o hello main.o hello.o factorial.o 

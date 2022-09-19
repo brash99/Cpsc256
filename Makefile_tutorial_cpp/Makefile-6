@@ -4,15 +4,15 @@
 # Date:  March 25, 2014
 #
 # Specify compiler, compiler flags, and linker flags
-CC=gcc
+CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
 #
 # Source files
-SOURCES=main.c hello.c factorial.c
+SOURCES=main.cpp hello.cpp factorial.cpp
 #
 # Object files
-OBJECTS=$(SOURCES:.c=.o)
+OBJECTS=$(SOURCES:.cpp=.o)
 #
 # Executable file
 EXECUTABLE=hello
@@ -22,7 +22,7 @@ all: $(SOURCES) $(EXECUTABLE)
 $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
-.c.o:
+.cpp.o:
 	$(CC) $(CFLAGS) $< -o $@
 
 # 

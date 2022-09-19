@@ -4,19 +4,19 @@
 # Date:  March 25, 2014
 #
 # Specify compiler, compiler flags, and linker flags
-CC=g++
+CC=gcc
 CFLAGS=-c -Wall
 LDFLAGS=
 #
 # Source files
-FACSOURCE=factorial.cpp
-SOURCES1=main.cpp hello.cpp
-SOURCES2=states.cpp
+FACSOURCE=factorial.c
+SOURCES1=main.c hello.c
+SOURCES2=states.c
 #
 # Object files
-FACOBJS=$(FACSOURCE:.cpp=.o)
-OBJECTS1=$(SOURCES1:.cpp=.o)
-OBJECTS2=$(SOURCES2:.cpp=.o)
+FACOBJS=$(FACSOURCE:.c=.o)
+OBJECTS1=$(SOURCES1:.c=.o)
+OBJECTS2=$(SOURCES2:.c=.o)
 #
 # Executables
 EXECUTABLE1=hello
@@ -30,7 +30,7 @@ $(EXECUTABLE1): $(FACOBJS) $(OBJECTS1)
 $(EXECUTABLE2): $(FACOBJS) $(OBJECTS2)
 	$(CC) $(LDFLAGS) $(OBJECTS2) $(FACOBJS) -o $@
 
-.cpp.o:
+.c.o:
 	$(CC) $(CFLAGS) $< -o $@
 
 # 

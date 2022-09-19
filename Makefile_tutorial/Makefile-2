@@ -1,16 +1,16 @@
 all: hello
 
 hello: main.o factorial.o hello.o
-	g++ main.o factorial.o hello.o -o hello
+	gcc main.o factorial.o hello.o -o hello
 
-main.o: main.cpp
-	g++ -c main.cpp
+main.o: main.c
+	gcc -c main.c
 
-factorial.o: factorial.cpp
-	g++ -c factorial.cpp
+factorial.o: factorial.c
+	gcc -c factorial.c
 
-hello.o: hello.cpp
-	g++ -c hello.cpp
+hello.o: hello.c
+	gcc -c hello.c
 
 clean:
 	rm -rf *o hello

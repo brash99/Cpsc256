@@ -1,8 +1,8 @@
-CC=g++
+CC=gcc
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=main.cpp hello.cpp factorial.cpp
-OBJECTS=$(SOURCES:.cpp=.o)
+SOURCES=main.c hello.c factorial.c
+OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=hello
 
 all: $(SOURCES) $(EXECUTABLE)
@@ -10,7 +10,7 @@ all: $(SOURCES) $(EXECUTABLE)
 $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
-.cpp.o:
+.c.o:
 	$(CC) $(CFLAGS) $< -o $@
 
 clean:
