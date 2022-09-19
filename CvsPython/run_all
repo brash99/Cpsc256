@@ -1,8 +1,0 @@
-#!/bin/sh
-./run_python
-echo ' '
-./run_c
-echo ' '
-./run_cython
-echo ' '
-./run_pypy
