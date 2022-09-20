@@ -1,0 +1,8 @@
+#!/bin/sh
+echo 'No gcc optimization ...'
+gcc -std=c99 -o c_loop c_loop.c
+time ./c_loop 840
+echo ' '
+echo 'With -O3 gcc optimization ...'
+gcc -O3 -std=c99 -o c_loop c_loop.c
+time ./c_loop 840

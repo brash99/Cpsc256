@@ -1,47 +1,5 @@
-# Makefile Template for multiple executables
-#
-# Author:  E.J. Brash
-# Date:  March 25, 2014
-#
-# Specify compiler, compiler flags, and linker flags
-CC=gcc
-CFLAGS=-c -Wall
-LDFLAGS=
-#
-# Source files
-FACSOURCE=factorial.c
-SOURCES1=main.c hello.c
-SOURCES2=states.c
-#
-# Object files
-FACOBJS=$(FACSOURCE:.c=.o)
-OBJECTS1=$(SOURCES1:.c=.o)
-OBJECTS2=$(SOURCES2:.c=.o)
-#
-# Executables
-EXECUTABLE1=hello
-EXECUTABLE2=states
-
-all: $(SOURCES) $(EXECUTABLE1) $(EXECUTABLE2)
-	
-$(EXECUTABLE1): $(FACOBJS) $(OBJECTS1)
-	$(CC) $(LDFLAGS) $(OBJECTS1) $(FACOBJS) -o $@
-
-$(EXECUTABLE2): $(FACOBJS) $(OBJECTS2)
-	$(CC) $(LDFLAGS) $(OBJECTS2) $(FACOBJS) -o $@
-
-.c.o:
-	$(CC) $(CFLAGS) $< -o $@
-
-# 
-# Dependencies
-$(OBJECTS1) : functions.h
-
-$(OBJECTS2) : functions.h
-
-$(FACOBJS) : functions.h
-
-# 
-# Rule to clean things up
-clean:
-	rm -rf $(OBJECTS1) $(OBJECTS2) $(FACOBJS) $(EXECUTABLE1) $(EXECUTABLE2)
+all:
+	gcc -c main.c 
+	gcc -c hello.c
+	gcc -c factorial.c
+	gcc -o hello main.o hello.o factorial.o 

@@ -1,0 +1,2 @@
+#!/bin/sh
+time python3 python_loop.py 17
