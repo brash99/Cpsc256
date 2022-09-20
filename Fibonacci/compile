@@ -2,3 +2,4 @@
 gcc -o fib --std=c99 fib.c -lm
 gcc -o fib_long --std=c99 fib_long.c -lm
 gcc -o fib_add --std=c99 fib_add.c -lm
+gcc -o fib_add_long --std=c99 fib_add_long.c -lm
